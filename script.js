@@ -161,18 +161,25 @@ if (prisijunges) {
   console.log(`Vartotojas nera prisijunges`);
 }
 // 8 uzduotis
-let vartotojass = prompt("iveskite kas prisijunges (admin/simple user):");
-let prisijungess = confirm("ar tu online?");
+
+let vartotojass = prompt("Iveskite kas prisijunges (admin/simple user):");
+let prisijungess = confirm("Ar tu online?");
+let skelbimoSavininkas = 'simple user';
 
 if (vartotojass === 'admin' && prisijungess) {
-  console.log('Įkeltas skelbimas');
+    console.log('Ikeltas skelbimas');
 } else if (vartotojass === 'simple user' && prisijungess) {
-  console.log('Galite sukurti arba ištrinti skelbimą');
+    if (vartotojass === skelbimoSavininkas) {
+        console.log('Galite istrinti skelbima arba idėti nauja');
+    } else {
+        console.log('Galite sukurti');
+    }
 } else if (vartotojass === 'admin' || (vartotojass === 'simple user' && !prisijungess)) {
-  console.log('Jokie veiksmai negalimi...');
+    console.log('Jokie veiksmai negalimi...');
 } else {
-  console.log('Neteisinga vartotojo sąlyga.');
+    console.log('Gribaujama!.');
 }
+
 
 
 // 9 uzduotis
